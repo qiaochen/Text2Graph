@@ -13,9 +13,10 @@ public class OpenIEServer {
 	public static void main(String[] args) throws Exception {
 		Server server = new Server(8777);
 		openIE = new OpenIE(new ClearParser(new ClearPostagger(new ClearTokenizer())),new ClearSrl(),false,false);
+		openIE.apply("I am Chen Qiao");
 		ServletContextHandler context = new ServletContextHandler(server, "/");
 		context.addServlet(OpenIEServlet.class, "/openie/*");
-		System.out.println("Starting server..");
+		System.out.println("Listening...");
 		server.start();
 	}
 }

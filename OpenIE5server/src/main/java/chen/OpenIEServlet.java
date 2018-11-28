@@ -65,6 +65,7 @@ public class OpenIEServlet extends HttpServlet {
 				arg2s.add(arg2.text());
 			}
 			pojo.setArg2s(arg2s);
+			pojo.setRawSentence(inst.extr().toString());
 			pojos.add(pojo);
 		}
 		return ow.writeValueAsString(pojos);
